@@ -79,9 +79,35 @@ async function run(){
 run().catch(console.dir)
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Server Working')
+})
+
+app.get('/hello', (req, res) => {
+  res.send('Updated here!')
 })
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+/*
+one time:
+1. heroku account open
+2. heroku software install
+
+every project:
+1. git init
+2. .gitignore(node_module, .env)
+3. push everything to git
+4. make sure you have scripts(start,start-dev)
+5. put process.env.PORT
+7. heroku login
+8. heroku create(one time per project)
+9. command: git push heroku main
+
+update:
+1. save everything and check locally
+2. git add, git commit -m" ,git push
+3. git push heroku main 
+
+*/
